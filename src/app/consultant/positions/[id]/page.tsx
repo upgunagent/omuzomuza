@@ -49,7 +49,7 @@ export default function ConsultantPositionDetailPage() {
 
     if (loading) return (
         <div className="flex items-center justify-center h-64">
-            <Loader2 className="w-8 h-8 animate-spin text-[#6A1B9A]" />
+            <Loader2 className="w-8 h-8 animate-spin text-[#1498e0]" />
         </div>
     );
 
@@ -83,7 +83,7 @@ export default function ConsultantPositionDetailPage() {
                     <Card>
                         <CardHeader className="bg-slate-50 border-b pb-4">
                             <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <Briefcase className="w-4 h-4 text-[#6A1B9A]" /> Pozisyon Detayları
+                                <Briefcase className="w-4 h-4 text-[#1498e0]" /> Pozisyon Detayları
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="pt-6 space-y-6">
@@ -105,19 +105,19 @@ export default function ConsultantPositionDetailPage() {
 
                 {/* Sidebar: Actions */}
                 <div className="md:col-span-1 space-y-4">
-                    <div className="bg-[#6A1B9A] text-white p-6 rounded-lg shadow-lg">
+                    <div className="bg-[#1498e0] text-white p-6 rounded-lg shadow-lg">
                         <h3 className="font-bold text-lg mb-2">İşlemler</h3>
                         <p className="text-white/80 text-sm mb-6">Bu pozisyon için aday sürecinizi yönetin.</p>
 
                         <div className="space-y-3">
                             <Link href={`/consultant/positions/${position.id}/add-candidate`}>
-                                <Button className="w-full bg-white text-[#6A1B9A] hover:bg-white/90 font-bold">
+                                <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-bold">
                                     <UserPlus className="w-4 h-4 mr-2" /> Pozisyona Aday Gir
                                 </Button>
                             </Link>
 
                             <Link href={`/consultant/positions/${position.id}/report`}>
-                                <Button className="w-full bg-[#8E24AA] hover:bg-[#7b1fa2] text-white border border-white/20">
+                                <Button className="w-full bg-white text-[#1498e0] hover:bg-white/90 border border-white/20 font-bold">
                                     <FileText className="w-4 h-4 mr-2" /> Aday Takip Raporu
                                 </Button>
                             </Link>

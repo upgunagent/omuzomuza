@@ -256,7 +256,7 @@ export default function AddCandidatePage() {
         }
     }
 
-    if (loading) return <div className="flex justify-center h-64 items-center"><Loader2 className="animate-spin w-8 h-8 text-[#6A1B9A]" /></div>;
+    if (loading) return <div className="flex justify-center h-64 items-center"><Loader2 className="animate-spin w-8 h-8 text-[#1498e0]" /></div>;
     if (!position) return null;
 
     return (
@@ -268,7 +268,7 @@ export default function AddCandidatePage() {
                 <div>
                     <h1 className="text-2xl font-bold text-slate-800">Pozisyona Aday Ekle</h1>
                     <p className="text-slate-500 text-sm">
-                        <span className="font-semibold text-[#6A1B9A]">{position.title}</span> - {position.companies?.name}
+                        <span className="font-semibold text-[#1498e0]">{position.title}</span> - {position.companies?.name}
                     </p>
                 </div>
             </div>
@@ -276,9 +276,9 @@ export default function AddCandidatePage() {
             <div className="grid grid-cols-2 gap-4 mb-4">
                 <div
                     onClick={() => { setCandidateSource("existing"); setSearchTerm(""); setSelectedCandidateId(""); }}
-                    className={`cursor-pointer border rounded-lg p-4 flex items-center gap-3 transition-all ${candidateSource === "existing" ? "border-[#6A1B9A] bg-[#6A1B9A]/5 ring-1 ring-[#6A1B9A]" : "border-slate-200 hover:border-slate-300"}`}
+                    className={`cursor-pointer border rounded-lg p-4 flex items-center gap-3 transition-all ${candidateSource === "existing" ? "border-[#1498e0] bg-[#1498e0]/5 ring-1 ring-[#1498e0]" : "border-slate-200 hover:border-slate-300"}`}
                 >
-                    <div className={`p-2 rounded-full ${candidateSource === "existing" ? "bg-[#6A1B9A] text-white" : "bg-slate-100 text-slate-400"}`}>
+                    <div className={`p-2 rounded-full ${candidateSource === "existing" ? "bg-[#1498e0] text-white" : "bg-slate-100 text-slate-400"}`}>
                         <Search className="w-5 h-5" />
                     </div>
                     <div>
@@ -289,9 +289,9 @@ export default function AddCandidatePage() {
 
                 <div
                     onClick={() => setCandidateSource("new")}
-                    className={`cursor-pointer border rounded-lg p-4 flex items-center gap-3 transition-all ${candidateSource === "new" ? "border-[#6A1B9A] bg-[#6A1B9A]/5 ring-1 ring-[#6A1B9A]" : "border-slate-200 hover:border-slate-300"}`}
+                    className={`cursor-pointer border rounded-lg p-4 flex items-center gap-3 transition-all ${candidateSource === "new" ? "border-[#1498e0] bg-[#1498e0]/5 ring-1 ring-[#1498e0]" : "border-slate-200 hover:border-slate-300"}`}
                 >
-                    <div className={`p-2 rounded-full ${candidateSource === "new" ? "bg-[#6A1B9A] text-white" : "bg-slate-100 text-slate-400"}`}>
+                    <div className={`p-2 rounded-full ${candidateSource === "new" ? "bg-[#1498e0] text-white" : "bg-slate-100 text-slate-400"}`}>
                         <UserPlus className="w-5 h-5" />
                     </div>
                     <div>
@@ -441,7 +441,7 @@ export default function AddCandidatePage() {
                         </div>
 
                         <div className="flex justify-end pt-4">
-                            <Button type="submit" disabled={submitting} className="bg-[#6A1B9A] hover:bg-[#5b1785] text-white w-full md:w-auto">
+                            <Button type="submit" disabled={submitting} className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white w-full md:w-auto">
                                 {submitting ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <><Save className="w-4 h-4 mr-2" /> Kaydı Tamamla</>}
                             </Button>
                         </div>
