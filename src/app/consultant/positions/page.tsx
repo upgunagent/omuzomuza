@@ -53,7 +53,7 @@ export default function ConsultantPositionsPage() {
 
     if (loading) return (
         <div className="flex items-center justify-center h-64">
-            <Loader2 className="w-8 h-8 animate-spin text-[#6A1B9A]" />
+            <Loader2 className="w-8 h-8 animate-spin text-[#1498e0]" />
         </div>
     );
 
@@ -62,7 +62,7 @@ export default function ConsultantPositionsPage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                 <div>
                     <h1 className="text-2xl font-bold tracking-tight text-slate-800 flex items-center gap-2">
-                        <Briefcase className="w-6 h-6 text-[#6A1B9A]" />
+                        <Briefcase className="w-6 h-6 text-[#1498e0]" />
                         Bana Atanan Pozisyonlar
                     </h1>
                     <p className="text-slate-500 text-sm mt-1">Yönetim sorumluluğu sizde olan açık pozisyonlar.</p>
@@ -84,19 +84,19 @@ export default function ConsultantPositionsPage() {
             <div className="flex space-x-1 bg-slate-100 p-1 rounded-lg w-fit">
                 <button
                     onClick={() => setActiveTab('open')}
-                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${activeTab === 'open' ? 'bg-white text-[#6A1B9A] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${activeTab === 'open' ? 'bg-white text-[#1498e0] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
                 >
                     Açık Pozisyonlar
                 </button>
                 <button
                     onClick={() => setActiveTab('closed')}
-                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${activeTab === 'closed' ? 'bg-white text-[#6A1B9A] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${activeTab === 'closed' ? 'bg-white text-[#1498e0] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
                 >
                     Kapalı Pozisyonlar
                 </button>
                 <button
                     onClick={() => setActiveTab('all')}
-                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${activeTab === 'all' ? 'bg-white text-[#6A1B9A] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${activeTab === 'all' ? 'bg-white text-[#1498e0] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
                 >
                     Tüm Pozisyonlar
                 </button>
@@ -117,7 +117,7 @@ export default function ConsultantPositionsPage() {
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-800">{position.title}</h3>
                                 <div className="flex items-center gap-4 text-sm text-slate-500 mt-2">
-                                    <div className="flex items-center gap-1 text-[#6A1B9A] font-medium bg-[#6A1B9A]/5 px-2 py-0.5 rounded">
+                                    <div className="flex items-center gap-1 text-[#1498e0] font-medium bg-sky-50 px-2 py-0.5 rounded">
                                         <UserCheck className="w-3.5 h-3.5" />
                                         Size Atandı
                                     </div>
@@ -129,7 +129,7 @@ export default function ConsultantPositionsPage() {
                             </div>
                             <div className="flex items-center gap-3">
                                 <Link href={`/consultant/positions/${position.id}`}>
-                                    <Button variant="outline" className="group-hover:bg-[#6A1B9A] group-hover:text-white group-hover:border-[#6A1B9A] transition-colors">
+                                    <Button variant="outline" className="group-hover:bg-[#1498e0] group-hover:text-white group-hover:border-[#1498e0] transition-colors">
                                         İncele & Aday Ekle <ArrowRight className="w-4 h-4 ml-2" />
                                     </Button>
                                 </Link>

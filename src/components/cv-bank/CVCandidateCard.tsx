@@ -117,7 +117,7 @@ export function CVCandidateCard({ candidate, isOmuzOmuza = false }: CVCandidateC
             <div className="flex gap-4">
                 {/* Avatar */}
                 <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold text-xl border-2 border-white shadow-sm">
+                    <div className="w-16 h-16 rounded-full bg-sky-100 flex items-center justify-center text-[#1498e0] font-bold text-xl border-2 border-white shadow-sm">
                         {initials}
                     </div>
                 </div>
@@ -189,7 +189,7 @@ export function CVCandidateCard({ candidate, isOmuzOmuza = false }: CVCandidateC
                     <Link href={feedbackUrl}>
                         <Button
                             variant="outline"
-                            className="bg-white hover:bg-purple-50 text-purple-700 border-purple-200"
+                            className="bg-white hover:bg-sky-50 text-[#1498e0] border-sky-200"
                             size="sm"
                         >
                             <Mail className="w-4 h-4 mr-2" />
@@ -213,7 +213,7 @@ export function CVCandidateCard({ candidate, isOmuzOmuza = false }: CVCandidateC
                     {candidate.drive_linki && (
                         <Button
                             onClick={() => window.open(candidate.drive_linki, '_blank')}
-                            className="bg-[#7e22ce] hover:bg-[#6b21a8] text-white shadow-md shadow-purple-100"
+                            className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white shadow-md shadow-sky-100"
                             size="sm"
                         >
                             <FileText className="w-4 h-4 mr-2" />

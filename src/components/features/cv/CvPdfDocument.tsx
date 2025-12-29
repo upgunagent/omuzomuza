@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start'
     },
     logoText: {
-        color: '#6A1B9A', // Brand purple
+        color: '#1498e0', // Brand Blue
         fontSize: 16,
         fontFamily: 'Roboto-Bold'
     },
@@ -252,7 +252,7 @@ export function CvPdfDocument({ candidate, educations, experiences, languages, s
                             {/* Disability indicator badge */}
                             {candidate.is_disabled && (
                                 <View style={{
-                                    backgroundColor: '#6A1B9A',
+                                    backgroundColor: '#1498e0',
                                     borderRadius: 10,
                                     paddingHorizontal: 6,
                                     paddingVertical: 2,

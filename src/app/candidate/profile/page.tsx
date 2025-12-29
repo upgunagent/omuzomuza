@@ -284,7 +284,7 @@ export default function CandidateProfilePage() {
                 </div>
                 <div className="flex items-center gap-2">
                     <div className="flex items-center gap-2">
-                        <Button onClick={handlePreviewCv} disabled={loadingPreview} className="!bg-purple-700 hover:!bg-purple-800 !text-white shadow-sm font-semibold">
+                        <Button onClick={handlePreviewCv} disabled={loadingPreview} className="!bg-[#1498e0] hover:!bg-[#0d8ad0] !text-white shadow-sm font-semibold">
                             {loadingPreview ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <FileText className="w-4 h-4 mr-2" />}
                             CV Önizle & İndir
                         </Button>
@@ -333,7 +333,7 @@ export default function CandidateProfilePage() {
                                     <p className="text-xs text-slate-500">JPG, PNG veya GIF. Maks 2MB.</p>
                                 </div>
                             </div>
-                            <Button type="submit" disabled={saving} className="!bg-purple-700 hover:!bg-purple-800 !text-white">
+                            <Button type="submit" disabled={saving} className="!bg-[#1498e0] hover:!bg-[#0d8ad0] !text-white">
                                 {saving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                                 Profil Bilgilerimi Kaydet
                             </Button>
@@ -544,27 +544,27 @@ export default function CandidateProfilePage() {
 
             <div className="grid gap-8">
                 <section>
-                    <h2 className="text-xl font-semibold mb-4 text-brand-purple">Eğitim Bilgileri</h2>
+                    <h2 className="text-xl font-semibold mb-4 text-[#1498e0]">Eğitim Bilgileri</h2>
                     <EducationSection />
                 </section>
                 <section>
-                    <h2 className="text-xl font-semibold mb-4 text-brand-purple">İş Deneyimi</h2>
+                    <h2 className="text-xl font-semibold mb-4 text-[#1498e0]">İş Deneyimi</h2>
                     <ExperienceSection />
                 </section>
                 <section>
-                    <h2 className="text-xl font-semibold mb-4 text-brand-purple">Yetenekler</h2>
+                    <h2 className="text-xl font-semibold mb-4 text-[#1498e0]">Yetenekler</h2>
                     <SkillSection />
                 </section>
                 <section>
-                    <h2 className="text-xl font-semibold mb-4 text-brand-purple">Yabancı Diller</h2>
+                    <h2 className="text-xl font-semibold mb-4 text-[#1498e0]">Yabancı Diller</h2>
                     <LanguageSection />
                 </section>
                 <section>
-                    <h2 className="text-xl font-semibold mb-4 text-brand-purple">Sertifikalar</h2>
+                    <h2 className="text-xl font-semibold mb-4 text-[#1498e0]">Sertifikalar</h2>
                     <CertificationSection />
                 </section>
                 <section>
-                    <h2 className="text-xl font-semibold mb-4 text-brand-purple">Referanslar</h2>
+                    <h2 className="text-xl font-semibold mb-4 text-[#1498e0]">Referanslar</h2>
                     <ReferenceSection />
                 </section>
             </div>

@@ -52,7 +52,7 @@ export function ReportCard({ report }: ReportCardProps) {
                 {report.drive_linki && (
                     <Button
                         onClick={() => window.open(report.drive_linki, '_blank')}
-                        className="bg-[#6A1B9A] hover:bg-[#581581] text-white"
+                        className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white"
                         size="sm"
                     >
                         <FileText className="w-4 h-4 mr-2" />

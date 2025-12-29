@@ -57,7 +57,7 @@ export default function ConsultantJobsPage() {
 
     if (loading) return (
         <div className="flex items-center justify-center h-64">
-            <Loader2 className="w-8 h-8 animate-spin text-[#7e22ce]" />
+            <Loader2 className="w-8 h-8 animate-spin text-[#1498e0]" />
         </div>
     );
 
@@ -72,7 +72,7 @@ export default function ConsultantJobsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {jobs.map(job => (
-                    <Card key={job.id} className={job.is_active ? 'border-t-4 border-t-[#7e22ce]' : 'opacity-75 bg-slate-50 border-t-4 border-t-slate-300'}>
+                    <Card key={job.id} className={job.is_active ? 'border-t-4 border-t-[#1498e0]' : 'opacity-75 bg-slate-50 border-t-4 border-t-slate-300'}>
                         <CardHeader className="flex flex-row items-center justify-between pb-2">
                             <div className="flex items-center gap-2 overflow-hidden">
                                 <CardTitle className="text-lg font-bold truncate text-slate-800" title={job.title}>{job.title}</CardTitle>
@@ -82,7 +82,7 @@ export default function ConsultantJobsPage() {
                                 variant="ghost"
                                 size="sm"
                                 onClick={() => handleViewDetails(job)}
-                                className="hover:text-[#7e22ce] text-slate-500"
+                                className="hover:text-[#1498e0] text-slate-500"
                             >
                                 <Eye className="w-4 h-4 mr-1" /> İncele
                             </Button>
@@ -107,7 +107,7 @@ export default function ConsultantJobsPage() {
                                     </div>
                                 )}
                                 <Link href={`/consultant/jobs/${job.id}`}>
-                                    <Button size="sm" variant="outline" className="text-[#7e22ce] border-[#7e22ce] hover:bg-[#7e22ce] hover:text-white">Başvurular</Button>
+                                    <Button size="sm" variant="outline" className="text-[#1498e0] border-[#1498e0] hover:bg-[#1498e0] hover:text-white">Başvurular</Button>
                                 </Link>
                             </div>
                         </CardContent>

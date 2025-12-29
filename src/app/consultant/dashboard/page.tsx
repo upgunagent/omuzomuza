@@ -54,7 +54,7 @@ export default function ConsultantDashboard() {
                                 <h3 className="text-3xl font-bold mt-2 text-slate-900">{stats.activeCandidates}</h3>
                             )}
                         </div>
-                        <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
+                        <div className="p-2 bg-sky-100 rounded-lg text-[#1498e0]">
                             <Users className="w-5 h-5" />
                         </div>
                     </div>

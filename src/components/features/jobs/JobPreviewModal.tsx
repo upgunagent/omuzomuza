@@ -21,7 +21,7 @@ export default function JobPreviewModal({ isOpen, onClose, job }: JobPreviewModa
             <div className="flex-1 overflow-y-auto p-1">
                 <div className="space-y-6">
                     {/* Job Header */}
-                    <Card className="border-t-4 border-t-[#6A1B9A]">
+                    <Card className="border-t-4 border-t-[#1498e0]">
                         <CardHeader>
                             <div className="flex justify-between items-start">
                                 <div className="flex-1">
@@ -77,7 +77,7 @@ export default function JobPreviewModal({ isOpen, onClose, job }: JobPreviewModa
                                 </div>
                                 <Button
                                     size="lg"
-                                    className="bg-[#6A1B9A] hover:bg-[#5b1785] text-white px-8 cursor-not-allowed opacity-80"
+                                    className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white px-8 cursor-not-allowed opacity-80"
                                     disabled
                                 >
                                     <Eye className="w-4 h-4 mr-2" /> Ön İzleme Modu

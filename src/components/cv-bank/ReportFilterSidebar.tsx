@@ -45,7 +45,7 @@ export function ReportFilterSidebar({ onFilter, loading }: ReportFilterSidebarPr
 
     return (
         <aside className="w-[300px] bg-white rounded-xl border border-slate-200 flex flex-col h-full shadow-sm overflow-hidden">
-            <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-[#6A1B9A] text-white">
+            <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-[#1498e0] text-white">
                 <div className="flex items-center gap-2">
                     <Filter className="w-4 h-4" />
                     <span className="font-bold text-sm">Rapor Filtreleri</span>
@@ -115,7 +115,7 @@ export function ReportFilterSidebar({ onFilter, loading }: ReportFilterSidebarPr
             </div>
 
             <div className="p-4 border-t border-slate-200 bg-slate-50">
-                <Button onClick={handleApply} disabled={loading} className="w-full bg-[#6A1B9A] hover:bg-[#581581] text-white">
+                <Button onClick={handleApply} disabled={loading} className="w-full bg-[#1498e0] hover:bg-[#0d8ad0] text-white">
                     {loading ? "Aranıyor..." : "Filtreleri Uygula"}
                 </Button>
             </div>

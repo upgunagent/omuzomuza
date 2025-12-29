@@ -460,13 +460,13 @@ export default function AdminCandidatesPage() {
 
                 {/* --- LEFT SIDEBAR: ADVANCED FILTERS --- */}
                 <aside className="w-[340px] bg-white rounded-xl border border-slate-200 overflow-y-auto hidden md:flex flex-col shadow-sm flex-shrink-0 h-full">
-                    <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-10">
-                        <div className="flex items-center gap-2 text-[#7e22ce]">
-                            <Filter className="w-4 h-4" />
+                    <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-[#1498e0] text-white sticky top-0 z-10">
+                        <div className="flex items-center gap-2">
+                            <Filter className="w-5 h-5" />
                             <span className="font-bold text-sm">Filtreleme Seçenekleri</span>
                         </div>
                         {(keyword || city !== "Tümü" || genders.length > 0 || disabilityStatus) && (
-                            <button onClick={() => window.location.reload()} className="text-xs text-red-500 hover:text-red-700 font-medium">Temizle</button>
+                            <button onClick={() => window.location.reload()} className="text-xs text-white/80 hover:text-white font-medium underline">Temizle</button>
                         )}
                     </div>
 
@@ -721,7 +721,7 @@ export default function AdminCandidatesPage() {
                     </div>
 
                     <div className="p-4 border-t border-slate-200 bg-slate-50">
-                        <Button className="w-full bg-[#7e22ce] hover:bg-[#6b21a8] text-white font-bold h-11 shadow-lg shadow-purple-200">
+                        <Button className="w-full bg-[#1498e0] hover:bg-[#0d8ad0] text-white font-bold h-11 shadow-lg shadow-sky-200">
                             Filtreleri Uygula
                         </Button>
                     </div>
@@ -769,7 +769,8 @@ export default function AdminCandidatesPage() {
                         )}
 
                         {!loading && filteredCandidates.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE).map(candidate => (
-                            <div key={candidate.id} className="group bg-white rounded-lg border border-slate-200 p-5 hover:shadow-xl hover:border-purple-200 transition-all duration-300 flex flex-col md:flex-row gap-6 relative">
+                            <div key={candidate.id} className="group bg-white rounded-lg border border-slate-200 p-5 hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row gap-6 relative">
+
 
                                 {/* Avatar Zone */}
                                 <div className="flex-shrink-0 flex flex-col items-center gap-2">
@@ -777,7 +778,7 @@ export default function AdminCandidatesPage() {
                                         {candidate.avatar_url ? (
                                             <img src={candidate.avatar_url} alt="avatar" className="w-full h-full object-cover" />
                                         ) : (
-                                            <div className="w-full h-full flex items-center justify-center bg-[#f3e8ff] text-[#7e22ce] font-bold text-2xl">
+                                            <div className="w-full h-full flex items-center justify-center bg-slate-100 text-slate-500 font-bold text-2xl">
                                                 {candidate.first_name?.[0]?.toUpperCase()}
                                             </div>
                                         )}
@@ -789,7 +790,7 @@ export default function AdminCandidatesPage() {
                                 <div className="flex-1 min-w-0">
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
                                         <div>
-                                            <h3 className="text-xl font-bold text-slate-800 group-hover:text-[#7e22ce] transition-colors truncate flex items-center gap-2">
+                                            <h3 className="text-xl font-bold text-slate-800 group-hover:text-[#1498e0] transition-colors truncate flex items-center gap-2">
                                                 <span className="truncate">
                                                     {candidate.first_name} {candidate.last_name}
                                                 </span>
@@ -859,7 +860,7 @@ export default function AdminCandidatesPage() {
                                             <Button
                                                 size="sm"
                                                 variant="outline"
-                                                className="border-[#7e22ce] text-[#7e22ce] hover:bg-[#7e22ce] hover:text-white"
+                                                className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
                                                 onClick={() => handleViewCV(candidate.id)}
                                             >
                                                 <Eye className="w-4 h-4 mr-2" /> İncele
@@ -947,7 +948,7 @@ export default function AdminCandidatesPage() {
                                                 <div className="flex flex-wrap gap-2">
                                                     {candidate.applications && candidate.applications.length > 0 ? (
                                                         candidate.applications.map((app: any, idx: number) => (
-                                                            <span key={idx} className="text-xs font-medium px-2 py-1 bg-purple-50 text-purple-700 border border-purple-100 rounded-md">
+                                                            <span key={idx} className="text-xs font-medium px-2 py-1 bg-sky-50 text-[#1498e0] border border-sky-100 rounded-md">
                                                                 {app.jobs?.title || "Bilinmeyen İlan"}
                                                             </span>
                                                         ))
@@ -962,8 +963,7 @@ export default function AdminCandidatesPage() {
 
                                 </div>
 
-                                {/* Hover Indicator Stripe */}
-                                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#7e22ce] rounded-l-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
                             </div>
                         ))}
                     </div>

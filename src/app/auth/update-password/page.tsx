@@ -66,7 +66,7 @@ export default function UpdatePasswordPage() {
                     </div>
                     <h2 className="text-2xl font-bold text-slate-800 mb-2">Şifreniz Güncellendi</h2>
                     <p className="text-slate-600 mb-6">Şifreniz başarıyla değiştirildi. Yönlendiriliyorsunuz...</p>
-                    <Button onClick={() => router.push("/")} className="w-full bg-[#7e22ce] hover:bg-[#6b21a8]">
+                    <Button onClick={() => router.push("/")} className="w-full bg-[#1498e0] hover:bg-[#0d8ad0]">
                         Giriş Sayfasına Dön
                     </Button>
                 </div>
@@ -78,7 +78,7 @@ export default function UpdatePasswordPage() {
         <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
             <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
                 <div className="text-center mb-8">
-                    <div className="w-12 h-12 bg-purple-100 text-[#7e22ce] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-12 h-12 bg-sky-100 text-[#1498e0] rounded-full flex items-center justify-center mx-auto mb-4">
                         <Lock className="w-6 h-6" />
                     </div>
                     <h1 className="text-2xl font-bold text-slate-800">Yeni Şifre Belirle</h1>
@@ -128,7 +128,7 @@ export default function UpdatePasswordPage() {
                     <Button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-[#7e22ce] hover:bg-[#6b21a8] text-white font-bold h-11"
+                        className="w-full bg-[#1498e0] hover:bg-[#0d8ad0] text-white font-bold h-11"
                     >
                         {loading ? "Güncelleniyor..." : "Şifreyi Güncelle"}
                     </Button>

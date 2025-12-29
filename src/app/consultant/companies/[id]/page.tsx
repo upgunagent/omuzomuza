@@ -119,7 +119,7 @@ export default function ConsultantCompanyDetailPage() {
                     <Card>
                         <CardHeader className="bg-slate-50 border-b pb-4">
                             <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <Building2 className="w-4 h-4 text-[#6A1B9A]" /> Genel Bilgiler
+                                <Building2 className="w-4 h-4 text-[#1498e0]" /> Genel Bilgiler
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="pt-6 space-y-6">

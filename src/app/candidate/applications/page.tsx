@@ -79,7 +79,7 @@ export default function CandidateApplicationsPage() {
             case 'accepted': return "bg-emerald-100 text-emerald-800 hover:bg-emerald-200 border-emerald-200";
             case 'rejected': return "bg-red-100 text-red-800 hover:bg-red-200 border-red-200";
             case 'reviewed': return "bg-blue-100 text-blue-800 hover:bg-blue-200 border-blue-200";
-            case 'interviewing': return "bg-purple-100 text-purple-800 hover:bg-purple-200 border-purple-200";
+            case 'interviewing': return "bg-sky-50 text-[#1498e0] hover:bg-sky-100 border-sky-100";
             case 'offered': return "bg-indigo-100 text-indigo-800 hover:bg-indigo-200 border-indigo-200";
             default: return "bg-amber-100 text-amber-800 hover:bg-amber-200 border-amber-200"; // pending
         }

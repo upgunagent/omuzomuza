@@ -4,8 +4,8 @@ export default function ConsultantLayout({ children }: { children: React.ReactNo
     return (
         <div className="flex min-h-screen bg-slate-50">
             <Sidebar />
-            <div className="pl-64 w-full">
-                <main className="px-2 py-8 w-full max-w-[1400px]">
+            <div className="flex-1 w-full min-w-0">
+                <main className="pl-10 pr-6 py-8 w-full max-w-[1400px]">
                     {children}
                 </main>
             </div>

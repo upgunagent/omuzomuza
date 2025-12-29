@@ -197,7 +197,7 @@ export default function AdminPositionDetailPage() {
 
     if (loading) return (
         <div className="flex items-center justify-center h-64">
-            <Loader2 className="w-8 h-8 animate-spin text-[#6A1B9A]" />
+            <Loader2 className="w-8 h-8 animate-spin text-[#1498e0]" />
         </div>
     );
 
@@ -231,7 +231,7 @@ export default function AdminPositionDetailPage() {
                     <Card>
                         <CardHeader className="bg-slate-50 border-b pb-4">
                             <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <Briefcase className="w-4 h-4 text-[#6A1B9A]" /> Detaylar
+                                <Briefcase className="w-4 h-4 text-[#1498e0]" /> Detaylar
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="pt-6 space-y-4">
@@ -278,7 +278,7 @@ export default function AdminPositionDetailPage() {
                     <Card>
                         <CardHeader className="bg-slate-50 border-b pb-4">
                             <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <Building2 className="w-4 h-4 text-[#6A1B9A]" /> Firma & Danışman
+                                <Building2 className="w-4 h-4 text-[#1498e0]" /> Firma & Danışman
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="pt-6 space-y-4">
@@ -319,7 +319,7 @@ export default function AdminPositionDetailPage() {
                                 </Select>
                             </div>
 
-                            <Button type="submit" disabled={saving} className="w-full bg-[#6A1B9A] hover:bg-[#5b1785] text-white mt-4">
+                            <Button type="submit" disabled={saving} className="w-full bg-[#1498e0] hover:bg-[#0d8ad0] text-white mt-4">
                                 {saving ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <><Save className="w-4 h-4 mr-2" /> Kaydet</>}
                             </Button>
 

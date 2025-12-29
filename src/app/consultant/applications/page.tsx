@@ -96,7 +96,7 @@ export default function ConsultantApplicationsPage() {
             case 'accepted': return <span className="flex items-center gap-1 text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md text-xs font-bold border border-emerald-100"><CheckCircle2 className="w-3 h-3" /> Kabul Edildi</span>;
             case 'rejected': return <span className="flex items-center gap-1 text-red-600 bg-red-50 px-2 py-1 rounded-md text-xs font-bold border border-red-100"><XCircle className="w-3 h-3" /> Reddedildi</span>;
             case 'reviewed': return <span className="flex items-center gap-1 text-blue-600 bg-blue-50 px-2 py-1 rounded-md text-xs font-bold border border-blue-100"><CheckCircle2 className="w-3 h-3" /> İncelendi</span>;
-            case 'interviewing': return <span className="flex items-center gap-1 text-purple-600 bg-purple-50 px-2 py-1 rounded-md text-xs font-bold border border-purple-100"><Briefcase className="w-3 h-3" /> Mülakat</span>;
+            case 'interviewing': return <span className="flex items-center gap-1 text-[#1498e0] bg-sky-50 px-2 py-1 rounded-md text-xs font-bold border border-sky-100"><Briefcase className="w-3 h-3" /> Mülakat</span>;
             case 'offered': return <span className="flex items-center gap-1 text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md text-xs font-bold border border-indigo-100"><CheckCircle2 className="w-3 h-3" /> Teklif</span>;
             default: return <span className="flex items-center gap-1 text-amber-600 bg-amber-50 px-2 py-1 rounded-md text-xs font-bold border border-amber-100"><Clock className="w-3 h-3" /> Beklemede</span>;
         }
@@ -161,7 +161,7 @@ export default function ConsultantApplicationsPage() {
         setIsCvModalOpen(true);
     }
 
-    if (loading && applications.length === 0) return <div className="flex justify-center p-12"><Loader2 className="animate-spin text-purple-600 w-8 h-8" /></div>;
+    if (loading && applications.length === 0) return <div className="flex justify-center p-12"><Loader2 className="animate-spin text-[#1498e0] w-8 h-8" /></div>;
 
     return (
         <div className="space-y-6">
@@ -176,13 +176,13 @@ export default function ConsultantApplicationsPage() {
                         <CardContent className="p-5 flex flex-col md:flex-row justify-between items-center gap-4">
                             <div className="flex flex-col gap-1">
                                 <div className="flex items-center gap-2">
-                                    <Link href={`/consultant/candidates/${app.candidates.id}`} className="font-bold text-lg text-slate-800 hover:text-purple-700 hover:underline">
+                                    <Link href={`/consultant/candidates/${app.candidates.id}`} className="font-bold text-lg text-slate-800 hover:text-[#1498e0] hover:underline">
                                         {app.candidates.first_name} {app.candidates.last_name}
                                     </Link>
                                     <Button
                                         variant="outline"
                                         size="sm"
-                                        className="h-6 text-[10px] px-2 text-purple-600 border-purple-200 hover:bg-purple-50"
+                                        className="h-6 text-[10px] px-2 text-[#1498e0] border-sky-200 hover:bg-sky-50"
                                         onClick={() => handleViewCV(app.candidates.id)}
                                     >
                                         <Eye className="w-3 h-3 mr-1" /> CV Görüntüle
@@ -209,7 +209,7 @@ export default function ConsultantApplicationsPage() {
                                 <div className="flex flex-col items-end gap-2">
                                     <div className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">İşlem Yap</div>
                                     <select
-                                        className="h-9 w-40 rounded-md border border-slate-200 bg-white px-3 py-1 text-sm shadow-sm transition-colors focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 disabled:opacity-50"
+                                        className="h-9 w-40 rounded-md border border-slate-200 bg-white px-3 py-1 text-sm shadow-sm transition-colors focus:border-[#1498e0] focus:outline-none focus:ring-1 focus:ring-[#1498e0] disabled:opacity-50"
                                         value={app.status || 'pending'}
                                         onChange={(e) => handleStatusChange(app.id, e.target.value)}
                                         disabled={updatingId === app.id}
@@ -221,7 +221,7 @@ export default function ConsultantApplicationsPage() {
                                         <option value="accepted">Kabul</option>
                                         <option value="rejected">Red</option>
                                     </select>
-                                    {updatingId === app.id && <span className="text-xs text-purple-600 animate-pulse">Güncelleniyor...</span>}
+                                    {updatingId === app.id && <span className="text-xs text-[#1498e0] animate-pulse">Güncelleniyor...</span>}
                                 </div>
                             </div>
                         </CardContent>

@@ -199,14 +199,14 @@ export default function InviteMemberForm() {
                             value={formData.extra_note}
                             onChange={handleChange}
                             rows={4}
-                            className="w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7e22ce] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                            className="w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1498e0] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         />
                     </div>
 
                     <Button
                         type="submit"
                         disabled={loading}
-                        className="w-full h-11 bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold text-base shadow-lg shadow-purple-200 mt-4"
+                        className="w-full h-11 bg-[#1498e0] hover:bg-[#0d8ad0] text-white font-bold text-base shadow-lg shadow-sky-200 mt-4"
                     >
                         {loading ? "Gönderiliyor..." : (
                             <><Mail className="w-4 h-4 mr-2" /> Üyelik Daveti Gönder</>
@@ -260,7 +260,7 @@ export default function InviteMemberForm() {
                             {extraNoteComponent}
 
                             <div className="my-6 text-center">
-                                <span className="inline-block bg-[#7e22ce] text-white font-bold py-3 px-6 rounded-lg shadow-md cursor-default">
+                                <span className="inline-block bg-[#1498e0] text-white font-bold py-3 px-6 rounded-lg shadow-md cursor-default">
                                     Üyelik Yap
                                 </span>
                             </div>

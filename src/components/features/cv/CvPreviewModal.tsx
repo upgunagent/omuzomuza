@@ -56,7 +56,7 @@ export default function CvPreviewModal({ isOpen, onClose, data }: CvPreviewModal
                         {({ loading }) => (
                             <Button
                                 disabled={loading}
-                                className="bg-[#6A1B9A] hover:bg-[#5b1785] text-white"
+                                className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white"
                             >
                                 {loading ? (
                                     <>

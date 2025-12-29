@@ -99,7 +99,7 @@ export default function JobDetailPage() {
     if (loading) {
         return (
             <div className="flex justify-center items-center p-12">
-                <Loader2 className="w-8 h-8 animate-spin text-[#6A1B9A]" />
+                <Loader2 className="w-8 h-8 animate-spin text-[#1498e0]" />
             </div>
         );
     }
@@ -128,7 +128,7 @@ export default function JobDetailPage() {
             </Button>
 
             {/* Job Header */}
-            <Card className="border-t-4 border-t-[#6A1B9A]">
+            <Card className="border-t-4 border-t-[#1498e0]">
                 <CardHeader>
                     <div className="flex justify-between items-start">
                         <div className="flex-1">
@@ -187,7 +187,7 @@ export default function JobDetailPage() {
                         </div>
                         <Button
                             size="lg"
-                            className={`${isApplied ? 'bg-slate-300 text-slate-500 hover:bg-slate-300' : 'bg-[#6A1B9A] hover:bg-[#5b1785] text-white'} px-8`}
+                            className={`${isApplied ? 'bg-slate-300 text-slate-500 hover:bg-slate-300' : 'bg-[#1498e0] hover:bg-[#0d8ad0] text-white'} px-8`}
                             disabled={isApplied || applying}
                             onClick={handleApply}
                         >

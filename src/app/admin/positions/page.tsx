@@ -161,7 +161,7 @@ export default function AdminPositionsPage() {
 
     if (loading) return (
         <div className="flex items-center justify-center h-64">
-            <Loader2 className="w-8 h-8 animate-spin text-[#6A1B9A]" />
+            <Loader2 className="w-8 h-8 animate-spin text-[#1498e0]" />
         </div>
     );
 
@@ -170,7 +170,7 @@ export default function AdminPositionsPage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                 <div>
                     <h1 className="text-2xl font-bold tracking-tight text-slate-800 flex items-center gap-2">
-                        <Briefcase className="w-6 h-6 text-[#6A1B9A]" />
+                        <Briefcase className="w-6 h-6 text-[#1498e0]" />
                         Pozisyonlar
                     </h1>
                     <p className="text-slate-500 text-sm mt-1">Firmalar için açılan pozisyonları ve atamaları yönetin.</p>
@@ -185,7 +185,7 @@ export default function AdminPositionsPage() {
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                     </div>
-                    <Button onClick={() => setIsAddModalOpen(true)} className="bg-[#6A1B9A] hover:bg-[#5b1785] text-white">
+                    <Button onClick={() => setIsAddModalOpen(true)} className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white">
                         <Plus className="w-4 h-4 mr-2" /> Yeni Pozisyon
                     </Button>
                 </div>
@@ -195,19 +195,19 @@ export default function AdminPositionsPage() {
             <div className="flex space-x-1 bg-slate-100 p-1 rounded-lg w-fit">
                 <button
                     onClick={() => setActiveTab('open')}
-                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${activeTab === 'open' ? 'bg-white text-[#6A1B9A] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${activeTab === 'open' ? 'bg-white text-[#1498e0] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
                 >
                     Açık Pozisyonlar
                 </button>
                 <button
                     onClick={() => setActiveTab('closed')}
-                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${activeTab === 'closed' ? 'bg-white text-[#6A1B9A] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${activeTab === 'closed' ? 'bg-white text-[#1498e0] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
                 >
                     Kapalı Pozisyonlar
                 </button>
                 <button
                     onClick={() => setActiveTab('all')}
-                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${activeTab === 'all' ? 'bg-white text-[#6A1B9A] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${activeTab === 'all' ? 'bg-white text-[#1498e0] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
                 >
                     Tüm Pozisyonlar
                 </button>
@@ -244,7 +244,7 @@ export default function AdminPositionsPage() {
                             </div>
                             <div className="flex items-center gap-3">
                                 <Link href={`/admin/positions/${position.id}`}>
-                                    <Button variant="outline" className="group-hover:bg-[#6A1B9A] group-hover:text-white group-hover:border-[#6A1B9A] transition-colors">
+                                    <Button variant="outline" className="group-hover:bg-[#1498e0] group-hover:text-white group-hover:border-[#1498e0] transition-colors">
                                         İncele <ArrowRight className="w-4 h-4 ml-2" />
                                     </Button>
                                 </Link>
@@ -322,7 +322,7 @@ export default function AdminPositionsPage() {
                     </div>
 
                     <div className="flex justify-end pt-4">
-                        <Button type="submit" disabled={isSubmitting} className="bg-[#6A1B9A] hover:bg-[#5b1785] text-white">
+                        <Button type="submit" disabled={isSubmitting} className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white">
                             {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <><Plus className="w-4 h-4 mr-2" /> Pozisyon Oluştur</>}
                         </Button>
                     </div>

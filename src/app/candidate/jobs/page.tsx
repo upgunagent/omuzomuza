@@ -156,7 +156,7 @@ export default function CandidateJobsPage() {
         return !job.is_handicapped;
     });
 
-    if (loading) return <div className="flex justify-center p-8"><Loader2 className="animate-spin text-[#6A1B9A]" /></div>;
+    if (loading) return <div className="flex justify-center p-8"><Loader2 className="animate-spin text-[#1498e0]" /></div>;
 
     return (
         <div className="space-y-6">
@@ -170,7 +170,7 @@ export default function CandidateJobsPage() {
                     const isApplied = applications.some(app => app.job_id === job.id);
 
                     return (
-                        <Card key={job.id} className="hover:shadow-md transition-shadow border-t-4 border-t-[#6A1B9A]">
+                        <Card key={job.id} className="hover:shadow-md transition-shadow border-t-4 border-t-[#1498e0]">
                             <CardHeader className="pb-3">
                                 <div className="flex justify-between items-start">
                                     <div className="flex gap-2 items-start overflow-hidden">
@@ -207,7 +207,7 @@ export default function CandidateJobsPage() {
                             </CardContent>
                             <CardFooter className="flex gap-2">
                                 <Button
-                                    className="flex-1 bg-[#6A1B9A] hover:bg-[#5b1785] text-white"
+                                    className="flex-1 bg-[#1498e0] hover:bg-[#0d8ad0] text-white"
                                     onClick={() => window.location.href = `/candidate/jobs/${job.id}`}
                                 >
                                     İlanı İncele

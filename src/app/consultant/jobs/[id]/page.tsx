@@ -145,7 +145,7 @@ export default function ConsultantJobApplicationsPage() {
         setIsCvModalOpen(true);
     }
 
-    if (loading && applications.length === 0) return <div className="flex justify-center p-12"><Loader2 className="animate-spin text-[#7e22ce] w-8 h-8" /></div>;
+    if (loading && applications.length === 0) return <div className="flex justify-center p-12"><Loader2 className="animate-spin text-[#1498e0] w-8 h-8" /></div>;
     if (!job && !loading) return <div>İlan bulunamadı!</div>;
 
     return (
@@ -205,7 +205,7 @@ export default function ConsultantJobApplicationsPage() {
                                     <div className="flex flex-col items-end gap-1">
                                         <span className="text-[10px] uppercase font-bold text-slate-400">Durum</span>
                                         <select
-                                            className="h-9 w-40 rounded-md border border-slate-200 bg-white px-3 py-1 text-sm focus:border-[#7e22ce] focus:outline-none focus:ring-1 focus:ring-[#7e22ce] transition-shadow"
+                                            className="h-9 w-40 rounded-md border border-slate-200 bg-white px-3 py-1 text-sm focus:border-[#1498e0] focus:outline-none focus:ring-1 focus:ring-[#1498e0] transition-shadow"
                                             value={app.status || 'pending'}
                                             onChange={(e) => handleStatusChange(app.id, e.target.value)}
                                             disabled={updatingId === app.id}

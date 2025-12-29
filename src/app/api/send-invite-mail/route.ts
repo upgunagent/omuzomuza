@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
                 ${extraNoteHtml}
                 
                 <div style="text-align: center; margin: 30px 0;">
-                    <a href="${registerLink}" style="background-color: #7e22ce; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">Üyelik Yap</a>
+                    <a href="${registerLink}" style="background-color: #1498e0; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">Üyelik Yap</a>
                 </div>
 
                 <p>Aramıza katılmanızdan mutluluk duyarız.</p>

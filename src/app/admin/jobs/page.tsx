@@ -179,14 +179,14 @@ export default function AdminJobsPage() {
                     <h1 className="text-2xl font-bold tracking-tight text-slate-900">İlanlarım</h1>
                     <p className="text-slate-500 text-sm">İşe alım ilanlarını yönetin.</p>
                 </div>
-                <Button onClick={handleAddNew} className="bg-[#7e22ce] hover:bg-[#6b21a8] text-white">
+                <Button onClick={handleAddNew} className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white">
                     <Plus className="mr-2 h-4 w-4" /> Yeni İlan Oluştur
                 </Button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {jobs.map((job) => (
-                    <Card key={job.id} className={job.is_active ? 'border-t-4 border-t-[#7e22ce]' : 'opacity-75 bg-slate-50 border-t-4 border-t-slate-300'}>
+                    <Card key={job.id} className={job.is_active ? 'border-t-4 border-t-[#1498e0]' : 'opacity-75 bg-slate-50 border-t-4 border-t-slate-300'}>
                         <CardHeader className="flex flex-row items-center justify-between pb-2">
                             <div className="flex items-center gap-2 overflow-hidden">
                                 <CardTitle className="text-lg font-bold truncate text-slate-800" title={job.title}>{job.title}</CardTitle>
@@ -194,7 +194,7 @@ export default function AdminJobsPage() {
                             </div>
                             <div className="flex gap-2">
                                 <Button variant="ghost" size="icon" onClick={() => handlePreview(job)} className="hover:text-blue-600" title="Ön İzle"><Eye className="w-4 h-4" /></Button>
-                                <Button variant="ghost" size="icon" onClick={() => handleEdit(job)} className="hover:text-[#7e22ce]" title="Düzenle"><Pencil className="w-4 h-4" /></Button>
+                                <Button variant="ghost" size="icon" onClick={() => handleEdit(job)} className="hover:text-[#1498e0]" title="Düzenle"><Pencil className="w-4 h-4" /></Button>
                                 <Button variant="ghost" size="icon" className="text-red-500 hover:text-red-700" onClick={() => handleDelete(job.id)} title="Sil"><Trash className="w-4 h-4" /></Button>
                             </div>
                         </CardHeader>
@@ -211,7 +211,7 @@ export default function AdminJobsPage() {
                                     <Switch checked={job.is_active || false} onCheckedChange={(c) => handleToggleStatus(job, c)} />
                                 </div>
                                 <Link href={`/admin/jobs/${job.id}`}>
-                                    <Button size="sm" variant="outline" className="text-[#7e22ce] border-[#7e22ce] hover:bg-[#7e22ce] hover:text-white">Başvurular</Button>
+                                    <Button size="sm" variant="outline" className="text-[#1498e0] border-[#1498e0] hover:bg-[#1498e0] hover:text-white">Başvurular</Button>
                                 </Link>
                             </div>
                         </CardContent>
@@ -219,7 +219,7 @@ export default function AdminJobsPage() {
                 ))}
                 {jobs.length === 0 && <div className="col-span-full text-center py-12 bg-white rounded-lg border border-dashed border-slate-300">
                     <p className="text-slate-500">Henüz hiç ilan oluşturulmamış.</p>
-                    <Button variant="link" onClick={handleAddNew} className="text-[#7e22ce]">İlk ilanı oluştur</Button>
+                    <Button variant="link" onClick={handleAddNew} className="text-[#1498e0]">İlk ilanı oluştur</Button>
                 </div>}
             </div>
 
@@ -231,7 +231,7 @@ export default function AdminJobsPage() {
                         <div className="space-y-2"><Label>Konum</Label><Input value={currentJob.location || ''} onChange={e => setCurrentJob({ ...currentJob, location: e.target.value })} placeholder="İstanbul, TR" /></div>
                         <div className="space-y-2">
                             <Label>Çalışma Şekli</Label>
-                            <select className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm focus:ring-[#7e22ce]" value={currentJob.work_type || 'Full-time'} onChange={e => setCurrentJob({ ...currentJob, work_type: e.target.value })}>
+                            <select className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm focus:ring-[#1498e0]" value={currentJob.work_type || 'Full-time'} onChange={e => setCurrentJob({ ...currentJob, work_type: e.target.value })}>
                                 <option value="Full-time">Tam Zamanlı</option>
                                 <option value="Part-time">Yarı Zamanlı</option>
                                 <option value="Remote">Uzaktan</option>
@@ -255,7 +255,7 @@ export default function AdminJobsPage() {
                         </div>
                     </div>
 
-                    <div className="flex justify-end pt-4"><Button type="submit" disabled={saving} className="bg-[#7e22ce] text-white hover:bg-[#6b21a8]">{saving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />} Kaydet</Button></div>
+                    <div className="flex justify-end pt-4"><Button type="submit" disabled={saving} className="bg-[#1498e0] text-white hover:bg-[#0d8ad0]">{saving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />} Kaydet</Button></div>
                 </form>
             </Modal>
 

@@ -95,7 +95,7 @@ export function ChangePasswordModal({ isOpen, onClose }: ChangePasswordModalProp
                 </div>
 
                 <div className="flex justify-end pt-2">
-                    <Button type="submit" disabled={loading} className="bg-[#7e22ce] hover:bg-[#6b21a8] text-white">
+                    <Button type="submit" disabled={loading} className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white">
                         {loading ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : "Güncelle"}
                     </Button>
                 </div>

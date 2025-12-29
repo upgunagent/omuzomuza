@@ -114,7 +114,7 @@ export default function AdminConsultantsPage() {
                     <h1 className="text-2xl font-bold tracking-tight text-slate-800">Danışman Yönetimi</h1>
                     <p className="text-slate-500">İK Danışmanlarını ekleyin ve yönetin.</p>
                 </div>
-                <Button onClick={() => setIsModalOpen(true)} className="bg-[#7e22ce] hover:bg-[#6b21a8] text-white">
+                <Button onClick={() => setIsModalOpen(true)} className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white">
                     <Plus className="mr-2 h-4 w-4" /> Yeni Danışman Ekle
                 </Button>
             </div>
@@ -123,7 +123,7 @@ export default function AdminConsultantsPage() {
                 {consultants.map(consultant => (
                     <div key={consultant.id} className="p-5 bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
                         <div className="flex items-center gap-4">
-                            <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center text-[#7e22ce]">
+                            <div className="h-12 w-12 rounded-full bg-sky-100 flex items-center justify-center text-[#1498e0]">
                                 <UserCog className="w-6 h-6" />
                             </div>
                             <div>
@@ -185,7 +185,7 @@ export default function AdminConsultantsPage() {
                     </div>
 
                     <div className="flex justify-end pt-4">
-                        <Button type="submit" className="bg-[#7e22ce] hover:bg-[#6b21a8] text-white">
+                        <Button type="submit" className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white">
                             {saving ? <Loader2 className="animate-spin w-4 h-4 mr-2" /> : <Plus className="w-4 h-4 mr-2" />}
                             Ekle
                         </Button>

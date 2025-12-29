@@ -15,7 +15,7 @@ function StatusBadge({ status }: { status: string }) {
     const colors: any = {
         pending: "bg-amber-500",
         reviewed: "bg-blue-500",
-        interviewing: "bg-purple-500",
+        interviewing: "bg-[#1498e0]",
         offered: "bg-indigo-500",
         accepted: "bg-emerald-500",
         rejected: "bg-red-500"
@@ -137,7 +137,7 @@ export default function AdminJobDetailPage() {
         setIsCvModalOpen(true);
     }
 
-    if (loading) return <div className="flex justify-center p-12"><Loader2 className="animate-spin text-[#7e22ce] w-8 h-8" /></div>;
+    if (loading) return <div className="flex justify-center p-12"><Loader2 className="animate-spin text-[#1498e0] w-8 h-8" /></div>;
     if (!job) return <div>Job not found</div>;
 
     return (
@@ -190,7 +190,7 @@ export default function AdminJobDetailPage() {
                                         <span className="text-sm text-slate-500">Durum:</span>
                                         <select
                                             key={`status-${app.id}-${app.status}`}
-                                            className="h-9 w-40 rounded-md border border-slate-200 bg-white px-3 py-1 text-sm focus:border-[#7e22ce] focus:outline-none focus:ring-1 focus:ring-[#7e22ce] transition-shadow"
+                                            className="h-9 w-40 rounded-md border border-slate-200 bg-white px-3 py-1 text-sm focus:border-[#1498e0] focus:outline-none focus:ring-1 focus:ring-[#1498e0] transition-shadow"
                                             value={app.status || 'pending'}
                                             onChange={(e) => updateStatus(app.id, e.target.value)}
                                         >

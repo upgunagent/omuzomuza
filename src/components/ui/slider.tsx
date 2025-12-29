@@ -20,7 +20,7 @@ const Slider = React.forwardRef<HTMLInputElement, SliderProps>(
             <input
                 type="range"
                 className={cn(
-                    "w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#7e22ce]",
+                    "w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#1498e0]",
                     className
                 )}
                 ref={ref}

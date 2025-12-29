@@ -265,7 +265,7 @@ export function PersonalInformationForm({ candidateId }: PersonalInformationForm
                                 <p className="text-xs text-slate-500">JPG, PNG veya GIF. Maks 2MB.</p>
                             </div>
                         </div>
-                        <Button type="submit" disabled={saving} className="!bg-purple-700 hover:!bg-purple-800 !text-white">
+                        <Button type="submit" disabled={saving} className="!bg-[#1498e0] hover:!bg-[#0d8ad0] !text-white">
                             {saving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                             Profil Bilgilerimi Kaydet
                         </Button>
@@ -359,7 +359,7 @@ export function PersonalInformationForm({ candidateId }: PersonalInformationForm
                                         name="is_disabled"
                                         checked={candidate.is_disabled === true}
                                         onChange={() => setCandidate({ ...candidate, is_disabled: true })}
-                                        className="accent-brand-purple"
+                                        className="accent-[#1498e0]"
                                     />
                                     <span>Var</span>
                                 </label>
@@ -369,7 +369,7 @@ export function PersonalInformationForm({ candidateId }: PersonalInformationForm
                                         name="is_disabled"
                                         checked={candidate.is_disabled === false || candidate.is_disabled === undefined}
                                         onChange={() => setCandidate({ ...candidate, is_disabled: false })}
-                                        className="accent-brand-purple"
+                                        className="accent-[#1498e0]"
                                     />
                                     <span>Yok</span>
                                 </label>

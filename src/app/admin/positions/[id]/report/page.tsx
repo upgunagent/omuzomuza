@@ -282,7 +282,7 @@ export default function AdminCandidateReportPage() {
                                         <td className="px-6 py-4 max-w-xs">
                                             <div className="space-y-3">
                                                 <div>
-                                                    <span className="block text-[10px] uppercase font-bold text-purple-600 mb-1">Danışman Değerlendirmesi</span>
+                                                    <span className="block text-[10px] uppercase font-bold text-[#1498e0] mb-1">Danışman Değerlendirmesi</span>
                                                     <p className="text-xs text-slate-700 leading-relaxed whitespace-pre-wrap line-clamp-2" title={candidate.consultant_evaluation || ''}>
                                                         {candidate.consultant_evaluation || '-'}
                                                     </p>
@@ -299,7 +299,7 @@ export default function AdminCandidateReportPage() {
                                             <Badge variant="secondary" className={`${candidate.result_status === 'BEKLEMEDE' ? 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200' :
                                                 candidate.result_status === 'İNCELENDİ' || candidate.result_status === 'INCELENDI' ? 'bg-orange-100 text-orange-700 hover:bg-orange-200' :
                                                     candidate.result_status === 'MÜLAKAT' || candidate.result_status === 'MULAKAT' ? 'bg-blue-100 text-blue-700 hover:bg-blue-200' :
-                                                        candidate.result_status === 'TEKLİF' || candidate.result_status === 'TEKLIF' ? 'bg-purple-100 text-purple-700 hover:bg-purple-200' :
+                                                        candidate.result_status === 'TEKLİF' || candidate.result_status === 'TEKLIF' ? 'bg-sky-100 text-[#1498e0] hover:bg-sky-200' :
                                                             candidate.result_status === 'KABUL' ? 'bg-green-100 text-green-700 hover:bg-green-200' :
                                                                 candidate.result_status === 'RED' ? 'bg-red-100 text-red-700 hover:bg-red-200' :
                                                                     'bg-slate-100 text-slate-700'

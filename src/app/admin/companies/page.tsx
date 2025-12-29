@@ -88,7 +88,7 @@ export default function AdminCompaniesPage() {
 
     if (loading) return (
         <div className="flex items-center justify-center h-64">
-            <Loader2 className="w-8 h-8 animate-spin text-[#6A1B9A]" />
+            <Loader2 className="w-8 h-8 animate-spin text-[#1498e0]" />
         </div>
     );
 
@@ -97,7 +97,7 @@ export default function AdminCompaniesPage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                 <div>
                     <h1 className="text-2xl font-bold tracking-tight text-slate-800 flex items-center gap-2">
-                        <Building2 className="w-6 h-6 text-[#6A1B9A]" />
+                        <Building2 className="w-6 h-6 text-[#1498e0]" />
                         Firma İndeksi
                     </h1>
                     <p className="text-slate-500 text-sm mt-1">Sistemdeki tüm kurumsal müşterileri yönetin.</p>
@@ -112,7 +112,7 @@ export default function AdminCompaniesPage() {
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                     </div>
-                    <Button onClick={() => setIsAddModalOpen(true)} className="bg-[#6A1B9A] hover:bg-[#5b1785] text-white">
+                    <Button onClick={() => setIsAddModalOpen(true)} className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white">
                         <Plus className="w-4 h-4 mr-2" /> Yeni Firma
                     </Button>
                 </div>
@@ -121,7 +121,7 @@ export default function AdminCompaniesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredCompanies.map(company => (
                     <Card key={company.id} className="hover:shadow-md transition-shadow group relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-1 h-full bg-[#6A1B9A]" />
+                        <div className="absolute top-0 left-0 w-1 h-full bg-[#1498e0]" />
                         <CardHeader className="pb-3">
                             <CardTitle className="text-lg font-bold text-slate-800 flex items-start justify-between">
                                 <span className="truncate" title={company.name}>{company.name}</span>
@@ -150,7 +150,7 @@ export default function AdminCompaniesPage() {
 
                             <div className="pt-2 flex justify-end">
                                 <Link href={`/admin/companies/${company.id}`}>
-                                    <Button size="sm" variant="outline" className="group-hover:bg-[#6A1B9A] group-hover:text-white group-hover:border-[#6A1B9A] transition-colors">
+                                    <Button size="sm" variant="outline" className="group-hover:bg-[#1498e0] group-hover:text-white group-hover:border-[#1498e0] transition-colors">
                                         Detaylar <ArrowRight className="w-4 h-4 ml-1" />
                                     </Button>
                                 </Link>
@@ -190,7 +190,7 @@ export default function AdminCompaniesPage() {
                         <Input value={newCompany.registration_number} onChange={e => setNewCompany({ ...newCompany, registration_number: e.target.value })} />
                     </div>
                     <div className="flex justify-end pt-4">
-                        <Button type="submit" disabled={isSubmitting} className="bg-[#6A1B9A] hover:bg-[#5b1785] text-white">
+                        <Button type="submit" disabled={isSubmitting} className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white">
                             {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <><Plus className="w-4 h-4 mr-2" /> Ekle</>}
                         </Button>
                     </div>

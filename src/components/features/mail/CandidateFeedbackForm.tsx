@@ -271,16 +271,16 @@ export default function CandidateFeedbackForm({ defaultCompany = "" }: Candidate
                     <div className="space-y-3 pt-2">
                         <Label className="text-sm font-medium text-slate-700">Geri Dönüş Tipi *</Label>
                         <div className="flex flex-col gap-2">
-                            <label className={`flex items-center gap-2 cursor-pointer p-3 rounded-lg border transition-all ${formData.result_type === "teklif" ? "bg-purple-50 border-purple-200" : "hover:bg-slate-50 border-transparent hover:border-slate-100"}`}>
+                            <label className={`flex items-center gap-2 cursor-pointer p-3 rounded-lg border transition-all ${formData.result_type === "teklif" ? "bg-sky-50 border-sky-200" : "hover:bg-slate-50 border-transparent hover:border-slate-100"}`}>
                                 <input
                                     type="radio"
                                     name="result_type"
                                     value="teklif"
                                     checked={formData.result_type === "teklif"}
                                     onChange={() => handleRadioChange("teklif")}
-                                    className="w-4 h-4 text-purple-600 focus:ring-purple-600"
+                                    className="w-4 h-4 text-[#1498e0] focus:ring-[#1498e0]"
                                 />
-                                <span className="text-sm font-bold text-purple-700">Olumlu – İş Teklifi <span className="text-xs font-normal ml-1 bg-purple-100 px-2 py-0.5 rounded-full text-purple-600">Dosya Ekli</span></span>
+                                <span className="text-sm font-bold text-[#1498e0]">Olumlu – İş Teklifi <span className="text-xs font-normal ml-1 bg-sky-100 px-2 py-0.5 rounded-full text-[#1498e0]">Dosya Ekli</span></span>
                             </label>
 
                             <label className={`flex items-center gap-2 cursor-pointer p-3 rounded-lg border transition-all ${formData.result_type === "olumlu" ? "bg-green-50 border-green-200" : "hover:bg-slate-50 border-transparent hover:border-slate-100"}`}>
@@ -317,7 +317,7 @@ export default function CandidateFeedbackForm({ defaultCompany = "" }: Candidate
                                 <span className="text-xs text-slate-400 font-normal">PDF, DOC, DOCX</span>
                             </Label>
                             {!attachment ? (
-                                <div className="border-2 border-dashed border-slate-200 rounded-lg p-4 hover:border-purple-300 hover:bg-purple-50 transition-all text-center">
+                                <div className="border-2 border-dashed border-slate-200 rounded-lg p-4 hover:border-sky-300 hover:bg-sky-50 transition-all text-center">
                                     <input
                                         type="file"
                                         id="offerFile"
@@ -326,16 +326,16 @@ export default function CandidateFeedbackForm({ defaultCompany = "" }: Candidate
                                         onChange={handleFileChange}
                                     />
                                     <label htmlFor="offerFile" className="cursor-pointer flex flex-col items-center justify-center gap-2">
-                                        <FileUp className="w-8 h-8 text-purple-400" />
+                                        <FileUp className="w-8 h-8 text-sky-400" />
                                         <span className="text-sm font-medium text-slate-600">Dosya Seç veya Sürükle</span>
                                         <span className="text-xs text-slate-400">Maksimum 5MB</span>
                                     </label>
                                 </div>
                             ) : (
-                                <div className="flex items-center justify-between p-3 bg-purple-50 border border-purple-100 rounded-lg">
+                                <div className="flex items-center justify-between p-3 bg-sky-50 border border-sky-100 rounded-lg">
                                     <div className="flex items-center gap-3 overflow-hidden">
-                                        <div className="w-8 h-8 bg-purple-100 rounded flex items-center justify-center flex-shrink-0">
-                                            <FileUp className="w-4 h-4 text-purple-600" />
+                                        <div className="w-8 h-8 bg-sky-100 rounded flex items-center justify-center flex-shrink-0">
+                                            <FileUp className="w-4 h-4 text-[#1498e0]" />
                                         </div>
                                         <div className="flex flex-col min-w-0">
                                             <span className="text-sm font-medium text-slate-700 truncate">{attachment.name}</span>
@@ -345,7 +345,7 @@ export default function CandidateFeedbackForm({ defaultCompany = "" }: Candidate
                                     <button
                                         type="button"
                                         onClick={removeAttachment}
-                                        className="p-1 hover:bg-purple-100 rounded-full text-slate-400 hover:text-purple-600 transition-colors"
+                                        className="p-1 hover:bg-sky-100 rounded-full text-slate-400 hover:text-[#1498e0] transition-colors"
                                     >
                                         <X className="w-4 h-4" />
                                     </button>
@@ -369,7 +369,7 @@ export default function CandidateFeedbackForm({ defaultCompany = "" }: Candidate
                     <Button
                         type="submit"
                         disabled={loading}
-                        className="w-full h-11 bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold text-base shadow-lg shadow-purple-200 mt-4"
+                        className="w-full h-11 bg-[#1498e0] hover:bg-[#0d8ad0] text-white font-bold text-base shadow-lg shadow-sky-200 mt-4"
                     >
                         {loading ? "Gönderiliyor..." : (
                             <><Mail className="w-4 h-4 mr-2" /> Maili Gönder</>

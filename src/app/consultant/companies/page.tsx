@@ -41,7 +41,7 @@ export default function ConsultantCompaniesPage() {
 
     if (loading) return (
         <div className="flex items-center justify-center h-64">
-            <Loader2 className="w-8 h-8 animate-spin text-[#6A1B9A]" />
+            <Loader2 className="w-8 h-8 animate-spin text-[#1498e0]" />
         </div>
     );
 
@@ -50,7 +50,7 @@ export default function ConsultantCompaniesPage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                 <div>
                     <h1 className="text-2xl font-bold tracking-tight text-slate-800 flex items-center gap-2">
-                        <Building2 className="w-6 h-6 text-[#6A1B9A]" />
+                        <Building2 className="w-6 h-6 text-[#1498e0]" />
                         Firma İndeksi
                     </h1>
                     <p className="text-slate-500 text-sm mt-1">Sistemdeki kurumsal müşterileri görüntüleyin.</p>
@@ -71,7 +71,7 @@ export default function ConsultantCompaniesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredCompanies.map(company => (
                     <Card key={company.id} className="hover:shadow-md transition-shadow group relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-1 h-full bg-[#6A1B9A]" />
+                        <div className="absolute top-0 left-0 w-1 h-full bg-[#1498e0]" />
                         <CardHeader className="pb-3">
                             <CardTitle className="text-lg font-bold text-slate-800 flex items-start justify-between">
                                 <span className="truncate" title={company.name}>{company.name}</span>
@@ -100,7 +100,7 @@ export default function ConsultantCompaniesPage() {
 
                             <div className="pt-2 flex justify-end">
                                 <Link href={`/consultant/companies/${company.id}`}>
-                                    <Button size="sm" variant="outline" className="group-hover:bg-[#6A1B9A] group-hover:text-white group-hover:border-[#6A1B9A] transition-colors">
+                                    <Button size="sm" variant="outline" className="group-hover:bg-[#1498e0] group-hover:text-white group-hover:border-[#1498e0] transition-colors">
                                         Detaylar <ArrowRight className="w-4 h-4 ml-1" />
                                     </Button>
                                 </Link>

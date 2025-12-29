@@ -137,7 +137,7 @@ export default function AdminCompanyDetailPage() {
 
     if (loading) return (
         <div className="flex items-center justify-center h-64">
-            <Loader2 className="w-8 h-8 animate-spin text-[#6A1B9A]" />
+            <Loader2 className="w-8 h-8 animate-spin text-[#1498e0]" />
         </div>
     );
 
@@ -163,7 +163,7 @@ export default function AdminCompanyDetailPage() {
                     <Card>
                         <CardHeader className="bg-slate-50 border-b pb-4">
                             <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <Building2 className="w-4 h-4 text-[#6A1B9A]" /> Genel Bilgiler
+                                <Building2 className="w-4 h-4 text-[#1498e0]" /> Genel Bilgiler
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="pt-6">
@@ -191,7 +191,7 @@ export default function AdminCompanyDetailPage() {
                                     </div>
                                 </div>
                                 <div className="flex justify-end pt-4">
-                                    <Button type="submit" disabled={saving} className="bg-[#6A1B9A] hover:bg-[#5b1785] text-white">
+                                    <Button type="submit" disabled={saving} className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white">
                                         {saving ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <><Save className="w-4 h-4 mr-2" /> Değişiklikleri Kaydet</>}
                                     </Button>
                                 </div>
@@ -205,16 +205,16 @@ export default function AdminCompanyDetailPage() {
                     <Card className="h-full flex flex-col">
                         <CardHeader className="bg-slate-50 border-b pb-4 flex flex-row items-center justify-between">
                             <CardTitle className="text-base font-bold flex items-center gap-2">
-                                <User className="w-4 h-4 text-[#6A1B9A]" /> Yetkililer
+                                <User className="w-4 h-4 text-[#1498e0]" /> Yetkililer
                             </CardTitle>
                             <Button size="sm" variant="ghost" className="h-8 w-8 rounded-full bg-white border border-slate-200" onClick={() => setIsContactModalOpen(true)}>
-                                <Plus className="w-4 h-4 text-[#6A1B9A]" />
+                                <Plus className="w-4 h-4 text-[#1498e0]" />
                             </Button>
                         </CardHeader>
                         <CardContent className="pt-4 flex-1 overflow-y-auto max-h-[600px]">
                             <div className="space-y-4">
                                 {contacts.map(contact => (
-                                    <div key={contact.id} className="p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-[#6A1B9A]/30 transition-colors relative group">
+                                    <div key={contact.id} className="p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-[#1498e0]/30 transition-colors relative group">
                                         <button
                                             onClick={() => handleDeleteContact(contact.id)}
                                             className="absolute top-2 right-2 p-1 text-slate-400 hover:text-red-600 opacity-0 group-hover:opacity-100 transition-opacity"
@@ -271,7 +271,7 @@ export default function AdminCompanyDetailPage() {
                         <Input value={newContact.phone} onChange={e => setNewContact({ ...newContact, phone: e.target.value })} placeholder="0555 555 55 55" />
                     </div>
                     <div className="flex justify-end pt-4">
-                        <Button type="submit" disabled={contactSaving} className="bg-[#6A1B9A] hover:bg-[#5b1785] text-white">
+                        <Button type="submit" disabled={contactSaving} className="bg-[#1498e0] hover:bg-[#0d8ad0] text-white">
                             {contactSaving ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <><Plus className="w-4 h-4 mr-2" /> Ekle</>}
                         </Button>
                     </div>
