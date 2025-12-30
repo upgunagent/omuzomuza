@@ -40,6 +40,19 @@ export function ReportsPage() {
                 }
             }
 
+            if (filters.disabilityCategory && filters.disabilityCategory !== "") {
+                if (filters.disabilityCategory === "GÖZ HASTALIKLARI") {
+                    // Special case: Search for "göz" OR "görme"
+                    query = query.or(`engel_icerigi.ilike.%göz%,engel_icerigi.ilike.%görme%`);
+                } else {
+                    // Default: Search matches the FIRST WORD of the selected category
+                    const firstWord = filters.disabilityCategory.split(' ')[0];
+                    if (firstWord) {
+                        query = query.ilike('engel_icerigi', `%${firstWord}%`);
+                    }
+                }
+            }
+
             query = query.limit(50);
 
             const { data, error, count } = await query;

@@ -172,19 +172,7 @@ export function CVCandidateCard({ candidate, isOmuzOmuza = false }: CVCandidateC
 
                 {/* Top Right Action (Desktop) */}
                 <div className="hidden md:flex gap-2">
-                    {/* Edit Button (Consultant/Admin Only) */}
-                    {(isConsultant || pathname?.includes('/admin')) && (
-                        <Link href={`/${isConsultant ? 'consultant' : 'admin'}/candidates/${candidate.id}/edit`}>
-                            <Button
-                                variant="outline"
-                                className="bg-white hover:bg-blue-50 text-blue-600 border-blue-200"
-                                size="sm"
-                            >
-                                <Pencil className="w-4 h-4 mr-2" />
-                                Düzenle
-                            </Button>
-                        </Link>
-                    )}
+
 
                     <Link href={feedbackUrl}>
                         <Button

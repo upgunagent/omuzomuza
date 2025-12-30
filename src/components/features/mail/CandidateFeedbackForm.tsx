@@ -156,7 +156,7 @@ export default function CandidateFeedbackForm({ defaultCompany = "" }: Candidate
 
                 <p>
                     Saygılarımızla,<br />
-                    Omuz Omuza Engelsiz İnsan Kaynakları Ekibi
+                    {companyName} adına Omuz Omuza Engelsiz İnsan Kaynakları Ekibi
                 </p>
             </>
         );
@@ -168,7 +168,7 @@ export default function CandidateFeedbackForm({ defaultCompany = "" }: Candidate
             <>
                 <p className="mb-4">Sayın {candidateName},</p>
                 <p className="mb-4">
-                    Omuz Omuza Engelsiz İnsan Kaynakları olarak, {companyName}'ndaki yeni göreviniz için sizi en içten dileklerimizle tebrik etmek isteriz! Bu önemli adımınızda size destek olabildiğimiz için büyük mutluluk duyuyoruz.
+                    {companyName}'ndaki yeni göreviniz için sizi en içten dileklerimizle tebrik etmek isteriz! Bu önemli adımınızda size destek olabildiğimiz için büyük mutluluk duyuyoruz.
                 </p>
                 <p className="mb-4">
                     Yeni işinizin kariyerinizde önemli bir dönüm noktası olacağına ve yeteneklerinizle {companyName}'na değerli katkılar sağlayacağınıza yürekten inanıyoruz.

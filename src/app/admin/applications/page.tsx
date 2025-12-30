@@ -93,12 +93,15 @@ export default function AdminApplicationsPage() {
 
     const getStatusBadge = (status: string) => {
         switch (status) {
-            case 'accepted': return <span className="flex items-center gap-1 text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md text-xs font-bold border border-emerald-100"><CheckCircle2 className="w-3 h-3" /> Kabul Edildi</span>;
-            case 'rejected': return <span className="flex items-center gap-1 text-red-600 bg-red-50 px-2 py-1 rounded-md text-xs font-bold border border-red-100"><XCircle className="w-3 h-3" /> Reddedildi</span>;
-            case 'reviewed': return <span className="flex items-center gap-1 text-blue-600 bg-blue-50 px-2 py-1 rounded-md text-xs font-bold border border-blue-100"><CheckCircle2 className="w-3 h-3" /> İncelendi</span>;
-            case 'interviewing': return <span className="flex items-center gap-1 text-purple-600 bg-purple-50 px-2 py-1 rounded-md text-xs font-bold border border-purple-100"><Briefcase className="w-3 h-3" /> Mülakat</span>;
+            case 'pending': return <span className="flex items-center gap-1 text-amber-600 bg-amber-50 px-2 py-1 rounded-md text-xs font-bold border border-amber-100"><Clock className="w-3 h-3" /> Beklemede</span>;
+            case 'reviewed': return <span className="flex items-center gap-1 text-blue-600 bg-blue-50 px-2 py-1 rounded-md text-xs font-bold border border-blue-100"><Eye className="w-3 h-3" /> İncelendi</span>;
+            case 'consultant_interview': return <span className="flex items-center gap-1 text-purple-600 bg-purple-50 px-2 py-1 rounded-md text-xs font-bold border border-purple-100"><Briefcase className="w-3 h-3" /> Danışman Mülakat</span>;
+            case 'company_interview': return <span className="flex items-center gap-1 text-orange-600 bg-orange-50 px-2 py-1 rounded-md text-xs font-bold border border-orange-100"><Briefcase className="w-3 h-3" /> Firma Mülakat</span>;
             case 'offered': return <span className="flex items-center gap-1 text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md text-xs font-bold border border-indigo-100"><CheckCircle2 className="w-3 h-3" /> Teklif</span>;
-            default: return <span className="flex items-center gap-1 text-amber-600 bg-amber-50 px-2 py-1 rounded-md text-xs font-bold border border-amber-100"><Clock className="w-3 h-3" /> Beklemede</span>;
+            case 'accepted': return <span className="flex items-center gap-1 text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md text-xs font-bold border border-emerald-100"><CheckCircle2 className="w-3 h-3" /> Kabul</span>;
+            case 'started': return <span className="flex items-center gap-1 text-teal-600 bg-teal-50 px-2 py-1 rounded-md text-xs font-bold border border-teal-100"><CheckCircle2 className="w-3 h-3" /> İşe Başlangıç</span>;
+            case 'rejected': return <span className="flex items-center gap-1 text-red-600 bg-red-50 px-2 py-1 rounded-md text-xs font-bold border border-red-100"><XCircle className="w-3 h-3" /> Ret</span>;
+            default: return <span className="flex items-center gap-1 text-slate-500 bg-slate-50 px-2 py-1 rounded-md text-xs font-bold border border-slate-200"><Clock className="w-3 h-3" /> Bilinmiyor ({status})</span>;
         }
     }
 
@@ -216,10 +219,12 @@ export default function AdminApplicationsPage() {
                                     >
                                         <option value="pending">Beklemede</option>
                                         <option value="reviewed">İncelendi</option>
-                                        <option value="interviewing">Mülakat</option>
+                                        <option value="consultant_interview">Danışman Mülakat</option>
+                                        <option value="company_interview">Firma Mülakat</option>
                                         <option value="offered">Teklif</option>
                                         <option value="accepted">Kabul</option>
-                                        <option value="rejected">Red</option>
+                                        <option value="started">İşe Başlangıç</option>
+                                        <option value="rejected">Ret</option>
                                     </select>
                                     {updatingId === app.id && <span className="text-xs text-[#7e22ce] animate-pulse">Güncelleniyor...</span>}
                                 </div>

@@ -58,13 +58,13 @@ export async function POST(req: NextRequest) {
 
                 ${extraNoteHtml}
                 
-                <div style="text-align: center; margin: 30px 0;">
-                    <a href="${registerLink}" style="background-color: #1498e0; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">Üyelik Yap</a>
-                </div>
-
                 <p>Aramıza katılmanızdan mutluluk duyarız.</p>
                 
                 <p>Saygılarımızla,<br/>Omuz Omuza Engelsiz İnsan Kaynakları Ekibi</p>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <a href="${registerLink}" style="background-color: #1498e0; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">Üyelik Yap</a>
+                </div>
                 
                 ${logoHtml}
             </div>
@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
         await transporter.sendMail({
             from: '"Omuz Omuza Engelsiz İK" <basvuru@omuzomuza.com.tr>',
             to: candidate_email,
-            subject: "Aramıza Katılın! - Omuz Omuza Platformu Üyelik Daveti",
+            subject: "Aramıza Katılın! - Omuz Omuza Engelsiz İK Üyelik Platformu Daveti",
             html: htmlContent
         });
 

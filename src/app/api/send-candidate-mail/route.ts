@@ -82,14 +82,14 @@ export async function POST(req: NextRequest) {
                 
                 ${extraNoteHtml}
 
-                <p>Saygılarımızla,<br/>Omuz Omuza Engelsiz İnsan Kaynakları Ekibi</p>
+                <p>Saygılarımızla,<br/>${company_name} adına Omuz Omuza Engelsiz İnsan Kaynakları Ekibi</p>
             `;
         } else if (isPositive) {
             // POSITIVE TEMPLATE
             subject = `Tebrikler! ${company_name} - Yeni Göreviniz`;
             messageBody = `
                 <p>Sayın <strong>${candidate_name}</strong>,</p>
-                <p>Omuz Omuza Engelsiz İnsan Kaynakları olarak, <strong>${company_name}</strong>'ndaki yeni göreviniz için sizi en içten dileklerimizle tebrik etmek isteriz! Bu önemli adımınızda size destek olabildiğimiz için büyük mutluluk duyuyoruz.</p>
+                <p><strong>${company_name}</strong>'ndaki yeni göreviniz için sizi en içten dileklerimizle tebrik etmek isteriz! Bu önemli adımınızda size destek olabildiğimiz için büyük mutluluk duyuyoruz.</p>
                 <p>Yeni işinizin kariyerinizde önemli bir dönüm noktası olacağına ve yeteneklerinizle <strong>${company_name}</strong>'na değerli katkılar sağlayacağınıza yürekten inanıyoruz.</p>
                 
                 ${extraNoteHtml}

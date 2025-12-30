@@ -120,7 +120,7 @@ export default function InviteMemberForm() {
     };
 
     // Preview
-    const previewSubject = `Aramıza Katılın! - Omuz Omuza Platformu Üyelik Daveti`;
+    const previewSubject = `Aramıza Katılın! - Omuz Omuza Engelsiz İK Üyelik Platformu Daveti`;
     const candidateName = formData.candidate_name || '[Aday Adı]';
     const extraNoteComponent = formData.extra_note && (
         <p className="mb-4 whitespace-pre-line text-slate-700">
@@ -259,12 +259,6 @@ export default function InviteMemberForm() {
 
                             {extraNoteComponent}
 
-                            <div className="my-6 text-center">
-                                <span className="inline-block bg-[#1498e0] text-white font-bold py-3 px-6 rounded-lg shadow-md cursor-default">
-                                    Üyelik Yap
-                                </span>
-                            </div>
-
                             <p className="mb-4">
                                 Aramıza katılmanızdan mutluluk duyarız.
                             </p>
@@ -273,6 +267,12 @@ export default function InviteMemberForm() {
                                 Saygılarımızla,<br />
                                 Omuz Omuza Engelsiz İnsan Kaynakları Ekibi
                             </p>
+
+                            <div className="my-6 text-center">
+                                <span className="inline-block bg-[#1498e0] text-white font-bold py-3 px-6 rounded-lg shadow-md cursor-default">
+                                    Üyelik Yap
+                                </span>
+                            </div>
 
                             {/* Logo */}
                             <div className="mt-6 pt-4 border-t border-slate-200">

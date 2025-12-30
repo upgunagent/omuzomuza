@@ -6,6 +6,23 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Search, Filter } from "lucide-react";
 
+const DISABILITY_CATEGORIES = [
+    "GENEL CERRAHİ",
+    "ORTOPEDİ VE TRAVMATOLOJİ",
+    "FİZİKSEL TIP VE REHABİLİTASYON",
+    "İÇ HASTALIKLARI",
+    "GÖZ HASTALIKLARI",
+    "NÖROLOJİ",
+    "RUH SAĞLIĞI VE HASTALIKLARI",
+    "KULAK BURUN BOĞAZ HASTALIKLARI",
+    "ONKOLOJİ",
+    "KALP DAMAR HASTALIKLARI",
+    "KAS ISKELET SISTEMI HASTALIKLARI",
+    "ENDOKRİNOLOJİ VE METABOLİZMA",
+    "SOLUNUM SİSTEMİ HASTALIKLARI",
+    "SİNİR SİSTEMİ HASTALIKLARI"
+];
+
 interface ReportFilterSidebarProps {
     onFilter: (filters: any) => void;
     loading: boolean;
@@ -17,6 +34,7 @@ export function ReportFilterSidebar({ onFilter, loading }: ReportFilterSidebarPr
     const [minRatio, setMinRatio] = useState("");
     const [maxRatio, setMaxRatio] = useState("");
     const [validity, setValidity] = useState("");
+    const [disabilityCategory, setDisabilityCategory] = useState("");
 
     const handleApply = () => {
         onFilter({
@@ -24,7 +42,8 @@ export function ReportFilterSidebar({ onFilter, loading }: ReportFilterSidebarPr
             tcNo,
             minRatio,
             maxRatio,
-            validity
+            validity,
+            disabilityCategory
         });
     };
 
@@ -40,6 +59,7 @@ export function ReportFilterSidebar({ onFilter, loading }: ReportFilterSidebarPr
         setMinRatio("");
         setMaxRatio("");
         setValidity("");
+        setDisabilityCategory("");
         onFilter({});
     };
 
@@ -110,6 +130,20 @@ export function ReportFilterSidebar({ onFilter, loading }: ReportFilterSidebarPr
                         <option value="1 Yıl">1 Yıl</option>
                         <option value="2 Yıl">2 Yıl</option>
                         <option value="5 Yıl">5 Yıl</option>
+                    </select>
+                </div>
+
+                <div className="space-y-2">
+                    <Label className="text-xs uppercase font-bold text-slate-500">Engel Durumu</Label>
+                    <select
+                        className="w-full text-sm border-slate-200 rounded-md p-2 h-9"
+                        value={disabilityCategory}
+                        onChange={e => setDisabilityCategory(e.target.value)}
+                    >
+                        <option value="">Seçiniz...</option>
+                        {DISABILITY_CATEGORIES.map((cat) => (
+                            <option key={cat} value={cat}>{cat}</option>
+                        ))}
                     </select>
                 </div>
             </div>

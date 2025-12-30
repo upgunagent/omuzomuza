@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/componen
 import dynamic from "next/dynamic";
 import { Candidate, ResumeEducation, ResumeExperience, ResumeLanguage, ResumeSkill, ResumeCertification, ResumeReference } from "@/types";
 import { Loader2, Upload, Trash, FileText } from "lucide-react";
+import { MultiSelectSimple } from "@/components/ui/multi-select-simple";
 
 import { EducationSection } from "@/components/features/resume/EducationSection";
 import { ExperienceSection } from "@/components/features/resume/ExperienceSection";
@@ -416,6 +417,26 @@ export default function CandidateProfilePage() {
                             </div>
                         </div>
 
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div className="space-y-2">
+                                <Label htmlFor="country">Ülke</Label>
+                                <Input id="country" value={candidate.country || ''} onChange={e => setCandidate({ ...candidate, country: e.target.value })} />
+                            </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="city">Şehir</Label>
+                                <Input id="city" value={candidate.city || ''} onChange={e => setCandidate({ ...candidate, city: e.target.value })} />
+                            </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="distict">İlçe</Label>
+                                <Input id="distict" value={candidate.district || ''} onChange={e => setCandidate({ ...candidate, district: e.target.value })} />
+                            </div>
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="address">Adres Detayı</Label>
+                            <Textarea id="address" className="h-20" value={candidate.address_detail || ''} onChange={e => setCandidate({ ...candidate, address_detail: e.target.value })} />
+                        </div>
+
                         {/* Disability Info */}
                         <div className="space-y-4 border p-4 rounded-md bg-slate-50">
                             <div className="space-y-2">
@@ -448,22 +469,21 @@ export default function CandidateProfilePage() {
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 animate-in fade-in slide-in-from-top-2">
                                     <div className="space-y-2">
                                         <Label htmlFor="disabilityCategory">Engel Kategorisi <span className="text-red-500">*</span></Label>
-                                        <select
-                                            id="disabilityCategory"
-                                            className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950"
-                                            value={candidate.disability_category || ''}
-                                            onChange={e => setCandidate({ ...candidate, disability_category: e.target.value })}
-                                        >
-                                            <option value="">Seçiniz...</option>
-                                            <option value="GENEL CERRAHİ">GENEL CERRAHİ</option>
-                                            <option value="ORTOPEDI VE TRAVMATOLOJI">ORTOPEDI VE TRAVMATOLOJI</option>
-                                            <option value="FIZIKSEL TIP VE REHABILITASYON">FIZIKSEL TIP VE REHABILITASYON</option>
-                                            <option value="İÇ HASTALIKLARI">İÇ HASTALIKLARI</option>
-                                            <option value="GÖZ HASTALIKLARI">GÖZ HASTALIKLARI</option>
-                                            <option value="NÖROLOJİ">NÖROLOJİ</option>
-                                            <option value="RUH SAĞLIĞI VE HASTALIKLARI">RUH SAĞLIĞI VE HASTALIKLARI</option>
-                                            <option value="KULAK BURUN BOĞAZ HASTALIKLARI">KULAK BURUN BOĞAZ HASTALIKLARI</option>
-                                        </select>
+                                        <MultiSelectSimple
+                                            options={[
+                                                { value: "GENEL CERRAHİ", label: "GENEL CERRAHİ" },
+                                                { value: "ORTOPEDI VE TRAVMATOLOJI", label: "ORTOPEDI VE TRAVMATOLOJI" },
+                                                { value: "FIZIKSEL TIP VE REHABILITASYON", label: "FIZIKSEL TIP VE REHABILITASYON" },
+                                                { value: "İÇ HASTALIKLARI", label: "İÇ HASTALIKLARI" },
+                                                { value: "GÖZ HASTALIKLARI", label: "GÖZ HASTALIKLARI" },
+                                                { value: "NÖROLOJİ", label: "NÖROLOJİ" },
+                                                { value: "RUH SAĞLIĞI VE HASTALIKLARI", label: "RUH SAĞLIĞI VE HASTALIKLARI" },
+                                                { value: "KULAK BURUN BOĞAZ HASTALIKLARI", label: "KULAK BURUN BOĞAZ HASTALIKLARI" }
+                                            ]}
+                                            selected={candidate.disability_category ? candidate.disability_category.split(',').map(s => s.trim()).filter(Boolean) : []}
+                                            onChange={(selected) => setCandidate({ ...candidate, disability_category: selected.join(',') })}
+                                            placeholder="Engel Kategorisi Seçiniz..."
+                                        />
                                     </div>
                                     <div className="space-y-2">
                                         <Label htmlFor="disabilityRate">Engelli Rapor Oranı <span className="text-red-500">*</span></Label>
@@ -519,24 +539,7 @@ export default function CandidateProfilePage() {
                             />
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div className="space-y-2">
-                                <Label htmlFor="country">Ülke</Label>
-                                <Input id="country" value={candidate.country || ''} onChange={e => setCandidate({ ...candidate, country: e.target.value })} />
-                            </div>
-                            <div className="space-y-2">
-                                <Label htmlFor="city">Şehir</Label>
-                                <Input id="city" value={candidate.city || ''} onChange={e => setCandidate({ ...candidate, city: e.target.value })} />
-                            </div>
-                            <div className="space-y-2">
-                                <Label htmlFor="distict">İlçe</Label>
-                                <Input id="distict" value={candidate.district || ''} onChange={e => setCandidate({ ...candidate, district: e.target.value })} />
-                            </div>
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="address">Adres Detayı</Label>
-                            <Textarea id="address" className="h-20" value={candidate.address_detail || ''} onChange={e => setCandidate({ ...candidate, address_detail: e.target.value })} />
-                        </div>
+
 
                     </CardContent>
                 </Card>

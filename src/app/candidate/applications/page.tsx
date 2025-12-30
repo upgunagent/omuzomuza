@@ -64,12 +64,14 @@ export default function CandidateApplicationsPage() {
 
     function getStatusColor(status: string) {
         switch (status) {
-            case 'accepted': return 'success'; // Green
-            case 'rejected': return 'destructive'; // Red
-            case 'reviewed': return 'default'; // Blue-ish or Primary
-            case 'interviewing': return 'secondary'; // Purple-ish usually or secondary
-            case 'offered': return 'default'; // Indigo-ish (using default for now, badge variants are limited)
-            default: return 'outline'; // Yellow/Warning equivalent if outline is styled or use specific classes
+            case 'accepted': return 'success';
+            case 'started': return 'success';
+            case 'rejected': return 'destructive';
+            case 'reviewed': return 'default';
+            case 'consultant_interview': return 'secondary';
+            case 'company_interview': return 'secondary';
+            case 'offered': return 'default';
+            default: return 'outline';
         }
     }
 
@@ -77,9 +79,11 @@ export default function CandidateApplicationsPage() {
     function getBadgeStyle(status: string) {
         switch (status) {
             case 'accepted': return "bg-emerald-100 text-emerald-800 hover:bg-emerald-200 border-emerald-200";
+            case 'started': return "bg-teal-100 text-teal-800 hover:bg-teal-200 border-teal-200";
             case 'rejected': return "bg-red-100 text-red-800 hover:bg-red-200 border-red-200";
             case 'reviewed': return "bg-blue-100 text-blue-800 hover:bg-blue-200 border-blue-200";
-            case 'interviewing': return "bg-sky-50 text-[#1498e0] hover:bg-sky-100 border-sky-100";
+            case 'consultant_interview': return "bg-purple-100 text-purple-800 hover:bg-purple-200 border-purple-200";
+            case 'company_interview': return "bg-orange-100 text-orange-800 hover:bg-orange-200 border-orange-200";
             case 'offered': return "bg-indigo-100 text-indigo-800 hover:bg-indigo-200 border-indigo-200";
             default: return "bg-amber-100 text-amber-800 hover:bg-amber-200 border-amber-200"; // pending
         }
@@ -87,12 +91,15 @@ export default function CandidateApplicationsPage() {
 
     function getStatusLabel(status: string) {
         switch (status) {
-            case 'accepted': return 'Kabul Edildi';
-            case 'rejected': return 'Reddedi';
+            case 'accepted': return 'Kabul';
+            case 'started': return 'İşe Başlangıç';
+            case 'rejected': return 'Ret';
             case 'reviewed': return 'İncelendi';
-            case 'interviewing': return 'Mülakat';
+            case 'consultant_interview': return 'Danışman Mülakat';
+            case 'company_interview': return 'Firma Mülakat';
             case 'offered': return 'Teklif';
-            default: return 'Bekliyor';
+            case 'pending': return 'Beklemede';
+            default: return 'Beklemede';
         }
     }
 

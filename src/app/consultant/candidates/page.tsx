@@ -321,7 +321,7 @@ export default function ConsultantCandidatesPage() {
 
             // 8. Disability Status
             if (disabilityStatus) {
-                if (!c.disability_category || c.disability_category !== disabilityStatus) return false;
+                if (!c.disability_category || !c.disability_category.includes(disabilityStatus)) return false;
             }
 
             return true;

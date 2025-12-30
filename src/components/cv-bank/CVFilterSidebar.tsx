@@ -8,12 +8,32 @@ import { Search, MapPin, Filter, ChevronDown, ChevronUp } from "lucide-react";
 import { TURKEY_CITIES, ISTANBUL_DISTRICTS } from "@/lib/locations";
 import { cn } from "@/lib/utils";
 
+const DISABILITY_CATEGORIES = [
+    "GENEL CERRAHİ",
+    "ORTOPEDİ VE TRAVMATOLOJİ",
+    "FİZİKSEL TIP VE REHABİLİTASYON",
+    "İÇ HASTALIKLARI",
+    "GÖZ HASTALIKLARI",
+    "NÖROLOJİ",
+    "RUH SAĞLIĞI VE HASTALIKLARI",
+    "KULAK BURUN BOĞAZ HASTALIKLARI",
+    "ONKOLOJİ",
+    "KALP DAMAR HASTALIKLARI",
+    "KAS ISKELET SISTEMI HASTALIKLARI",
+    "ENDOKRİNOLOJİ VE METABOLİZMA",
+    "SOLUNUM SİSTEMİ HASTALIKLARI",
+    "SİNİR SİSTEMİ HASTALIKLARI"
+];
+
 interface CVFilterSidebarProps {
     onFilter: (filters: any) => void;
     loading: boolean;
+    tableName?: string;
 }
 
-export function CVFilterSidebar({ onFilter, loading }: CVFilterSidebarProps) {
+export function CVFilterSidebar({ onFilter, loading, tableName }: CVFilterSidebarProps) {
+    // Check if we should show disability filter (Only for omuzomuza_engelli)
+    const showDisabilityFilter = tableName === "omuzomuza_engelli";
     // A. Keywords
     const [keyword, setKeyword] = useState("");
 
@@ -57,7 +77,8 @@ export function CVFilterSidebar({ onFilter, loading }: CVFilterSidebarProps) {
         education: false,
         exp: false,
         lang: false,
-        skills: false
+        skills: false,
+        disability: false
     });
 
     const toggleSection = (key: string) => {
@@ -277,14 +298,6 @@ export function CVFilterSidebar({ onFilter, loading }: CVFilterSidebarProps) {
                             </div>
 
                             {/* Engel */}
-                            <div className="space-y-1">
-                                <Label className="text-xs text-slate-500">Engel Durumu</Label>
-                                <select className="w-full text-sm border-slate-200 rounded p-1.5" value={disabilityStatus} onChange={e => setDisabilityStatus(e.target.value)}>
-                                    <option value="">Farketmez</option>
-                                    <option value="Var">Var</option>
-                                    <option value="Yok">Yok</option>
-                                </select>
-                            </div>
                         </div>
                     )}
                 </div>
@@ -330,6 +343,29 @@ export function CVFilterSidebar({ onFilter, loading }: CVFilterSidebarProps) {
                         </div>
                     )}
                 </div>
+
+                {/* G. Disability Status (Moved to bottom) */}
+                {showDisabilityFilter && (
+                    <div className="border border-slate-200 rounded-lg overflow-hidden">
+                        <button onClick={() => toggleSection('disability')} className="w-full flex justify-between items-center p-3 bg-slate-50 hover:bg-slate-100 transition-colors">
+                            <span className="text-sm font-semibold text-slate-700">Engel Durumu</span>
+                            {openSections.disability ? <ChevronUp className="w-4 h-4 text-slate-500" /> : <ChevronDown className="w-4 h-4 text-slate-500" />}
+                        </button>
+                        {openSections.disability && (
+                            <div className="p-3 space-y-3 bg-white border-t border-slate-200">
+                                <div className="space-y-1">
+                                    <select className="w-full text-sm border-slate-200 rounded p-1.5" value={disabilityStatus} onChange={e => setDisabilityStatus(e.target.value)}>
+                                        <option value="">Farketmez</option>
+                                        <option disabled>──────────</option>
+                                        {DISABILITY_CATEGORIES.map(cat => (
+                                            <option key={cat} value={cat}>{cat}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                )}
             </div>
 
             <div className="p-4 border-t border-slate-200 bg-slate-50">

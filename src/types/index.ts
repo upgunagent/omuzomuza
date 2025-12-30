@@ -116,7 +116,7 @@ export interface Application {
     id: number;
     job_id: number;
     candidate_id: string;
-    status: "pending" | "accepted" | "rejected";
+    status: "pending" | "reviewed" | "consultant_interview" | "company_interview" | "offered" | "accepted" | "started" | "rejected";
     created_at: string;
     // Joins
     jobs?: Job;

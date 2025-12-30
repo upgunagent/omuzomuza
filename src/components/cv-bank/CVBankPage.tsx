@@ -121,6 +121,16 @@ export function CVBankPage({ tableName, title, description }: CVBankPageProps) {
             }
             if (filters.disabilityStatus === "Var") {
                 query = query.not('engel_durumu', 'is', null).neq('engel_durumu', 'Yok').neq('engel_durumu', '');
+            } else if (filters.disabilityStatus && filters.disabilityStatus !== "" && filters.disabilityStatus !== "Yok") {
+                // Specific Category Selected
+                if (filters.disabilityStatus === "GÖZ HASTALIKLARI") {
+                    query = query.or(`engel_durumu.ilike.%göz%,engel_durumu.ilike.%görme%`);
+                } else {
+                    const firstWord = filters.disabilityStatus.split(' ')[0];
+                    if (firstWord) {
+                        query = query.ilike('engel_durumu', `%${firstWord}%`);
+                    }
+                }
             } else if (filters.disabilityStatus === "Yok") {
                 query = query.or('engel_durumu.is.null,engel_durumu.eq.Yok,engel_durumu.eq.""');
             }
@@ -249,7 +259,7 @@ export function CVBankPage({ tableName, title, description }: CVBankPageProps) {
 
     return (
         <div className="flex h-[calc(100vh-2rem)] gap-6">
-            <CVFilterSidebar onFilter={handleFilterChange} loading={loading} />
+            <CVFilterSidebar onFilter={handleFilterChange} loading={loading} tableName={tableName} />
 
             <div className="flex-1 flex flex-col h-full overflow-hidden">
                 <div className="flex items-center gap-3 mb-4 flex-shrink-0">
